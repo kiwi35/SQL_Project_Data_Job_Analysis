@@ -1,0 +1,3 @@
+CREATE DATABASE sql_db1;
+
+-- DROP DATABASE IF EXISTS sql_db1;
