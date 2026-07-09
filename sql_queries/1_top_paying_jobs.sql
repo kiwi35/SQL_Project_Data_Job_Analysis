@@ -1,7 +1,10 @@
 /*
 What are the top paying jobs for a given role?
--Identifies the top paying jobs for a given role by analyzing the job postings data. 
+-Identifies the top paying jobs for a given role (Data Analyst, in this case) by analyzing 
+ the job postings data.
 -Why? To help job seekers identify high-paying opportunities in their desired field.
+-Role, location, and result count are hardcoded below, but can be swapped out to 
+ re-run this analysis for a different role, location, or top-N.
 */
 SELECT
     job_id,
@@ -16,10 +19,10 @@ FROM
 LEFT JOIN
     company_dim ON job_postings_fact.company_id = company_dim.company_id
 WHERE 
-    job_title_short = 'Data Analyst' AND   -- Replace with desired role (see README for available roles)
+    job_title_short = 'Data Analyst' AND   -- role analyzed here
     salary_year_avg IS NOT NULL AND 
-    job_location = 'Anywhere'              -- Replace 'Anywhere'(Remote||Work From Home) with the desired location
+    job_location = 'India'              -- location analyzed here
 ORDER BY
     salary_year_avg DESC
 LIMIT
-    10;                                    -- Replace 10 with the desired number of results
+    10;                                    -- top 10 highest-paying postings
