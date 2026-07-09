@@ -1,5 +1,5 @@
 /*
-Fetch skills associated with the highest-paying jobs for a selected role.
+Fetch skills associated with the highest-paying jobs for a Data Analyst.
 -Retrieves one row per skill for each of the top 100 highest-paying Data Analyst 
  postings (job-skill pairs, not yet aggregated).
 -Note: salary/company repeat across rows since each row is one job-skill pair 
