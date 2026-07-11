@@ -1,16 +1,22 @@
 /*
-Fetch skills associated with the highest-paying jobs for a Data Analyst.
--Retrieves one row per skill for each of the top 100 highest-paying Data Analyst 
- postings (job-skill pairs, not yet aggregated).
--Note: salary/company repeat across rows since each row is one job-skill pair 
- (e.g. a job with 5 skills appears as 5 rows).
--Top 100 chosen over top 10 for a broader, less outlier-prone sample. A percentage-based 
- cutoff (e.g. top 1%) was considered but rejected, since posting counts vary widely by 
- role — a percentage would yield inconsistent sample sizes depending on how common 
- the role is.
--Why? This raw data feeds further aggregation to identify which skills appear most 
- among top-paying postings, helping job seekers prioritize what to learn.
--For the aggregated, visual breakdown, see the Power BI dashboard in this project.
+Skills required for the top 100 highest-paying Data Analyst jobs.
+
+Purpose:
+- Retrieve the skills associated with the highest-paying Data Analyst job postings.
+
+Method:
+- Select the top 100 Data Analyst postings by average yearly salary.
+- Join with skills_job_dim to map jobs to their required skills.
+- Join with skills_dim to retrieve skill names.
+- Return one row per job-skill pair.
+
+Notes:
+- Salary and company information repeat because each row represents a single skill linked to a job.
+- A fixed sample of the top 100 jobs provides a broader and more consistent dataset than using only the top 10 or a percentage-based cutoff, whose size varies with the number of available postings.
+
+Insight:
+- This query serves as the raw dataset for identifying which skills appear most frequently in high-paying Data Analyst roles.
+- The aggregated results are visualized in the project's Power BI dashboard.
 */
 WITH
     -- Top 100 highest-paying Data Analyst postings

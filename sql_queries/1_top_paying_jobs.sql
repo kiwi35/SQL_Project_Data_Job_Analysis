@@ -1,10 +1,23 @@
 /*
-What are the top paying jobs for a given role?
--Identifies the top paying jobs for a given role (Data Analyst, in this case) by analyzing 
- the job postings data.
--Why? To help job seekers identify high-paying opportunities in their desired field.
--Role, location, and result count are hardcoded below, but can be swapped out to 
- re-run this analysis for a different role, location, or top-N.
+Top-paying Data Analyst jobs in India.
+
+Purpose:
+- Identify the highest-paying Data Analyst job postings located in India.
+
+Method:
+- Filter Data Analyst postings with available salary data.
+- Rank postings by average yearly salary.
+- Return the top 10 highest-paying jobs.
+
+Notes:
+- The role, location, and result limit are hardcoded for this analysis but can be modified to analyze other roles, locations, or sample sizes.
+
+Insight:
+- Higher salaries are associated with senior and specialized Data Analyst roles rather than general entry-level positions.
+- Industry specialization, particularly in finance, healthcare, and enterprise analytics, contributes to higher earning potential.
+- Top-paying opportunities are concentrated among established global companies, reflecting strong investment in data-driven decision-making.
+- Career progression through domain expertise and senior-level responsibilities appears to have a greater impact on salary than the job title "Data Analyst" alone.
+
 */
 SELECT
     job_id,
