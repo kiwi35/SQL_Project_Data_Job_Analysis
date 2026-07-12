@@ -16,7 +16,7 @@ Notes:
 
 Insight:
 - This query serves as the raw dataset for identifying which skills appear most frequently in high-paying Data Analyst roles.
-- The aggregated results are visualized in the project's Power BI dashboard.
+- The aggregated results are visualized in the project's README FILE.
 */
 WITH
     -- Top 100 highest-paying Data Analyst postings
@@ -47,4 +47,20 @@ FROM
     INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id      
 ORDER BY
     salary_year_avg DESC;
+
+
+/* Results:
+| Skill     | Frequency |
+|-----------|-----------|
+| Python    |        54 |
+| SQL       |        49 |
+| Tableau   |        37 |
+| R         |        27 |
+| Excel     |        17 |
+| Spark     |        13 |
+| AWS       |        12 |
+| Power BI  |        11 |
+| SAS       |        10 |
+| Snowflake |        10 |
+*/
 
